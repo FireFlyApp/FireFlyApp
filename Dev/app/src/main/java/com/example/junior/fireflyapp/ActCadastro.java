@@ -20,7 +20,6 @@ public class ActCadastro extends AppCompatActivity {
     private TextView lblDtNascimento;
     private TextView lblEmail;
     private TextView lblSenha;
-    private TextView teste;
 
     //EditText
     private EditText txtNome;
