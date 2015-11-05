@@ -82,8 +82,7 @@ public class ActCadastro extends AppCompatActivity {
                         dlg.setNeutralButton("OK", null);
                         dlg.show();
 
-                       Usuario usuario = new Usuario();
-
+                       
                 }
 
             }
