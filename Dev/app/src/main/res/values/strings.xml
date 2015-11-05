@@ -1,0 +1,20 @@
+<resources>
+
+    <string name="title_activity_act_listar_opcoes">FireFly Eventos</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Configurações</string>
+    <string name="lblEntrar">Entrar</string>
+    <string name="lblCadastrarTela">Cadastrar</string>
+    <string name="rbtMasculino">Masculino</string>
+    <string name="rbtFeminino">Feminino</string>
+    <string name="lblSexo">Sexo</string>
+    <string name="lblDtNascimento">Dt. Nascimento</string>
+    <string name="lblNome">Nome</string>
+    <string name="lblSobrenome">Sobrenome</string>
+    <string name="lblEmail">Email</string>
+    <string name="lblSenha">Senha</string>
+    <string name="btnCadastrar">Cadastrar</string>
+</resources>
