@@ -1,25 +1,17 @@
 package com.example.junior.fireflyapp;
 
-import android.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 public class ActCadastro extends AppCompatActivity {
 
-    //TextView
-    private TextView lblCadastrarTela;
-    private TextView lblNome;
-    private TextView lblSobrenome;
-    private TextView lblSexo;
-    private TextView lblDtNascimento;
-    private TextView lblEmail;
-    private TextView lblSenha;
+    private Usuario usuario;
 
     //EditText
     private EditText txtNome;
@@ -42,21 +34,12 @@ public class ActCadastro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_cadastrar);
 
-        //Mapeamento TextView
-        lblCadastrarTela = (TextView)findViewById(R.id.lblCadastrarTela);
-        lblNome = (TextView)findViewById(R.id.lblNome);
-        lblSobrenome = (TextView)findViewById(R.id.lblSobrenome);
-        lblSexo = (TextView)findViewById(R.id.lblSexo);
-        lblDtNascimento = (TextView)findViewById(R.id.lblDtNascimento);
-        lblEmail = (TextView)findViewById(R.id.lblEmail);
-        lblSenha = (TextView)findViewById(R.id.lblSenha);
-
         //Mapeamento EditText
-        txtNome = (EditText)findViewById(R.id.txtNome);
-        txtSobrenome = (EditText)findViewById(R.id.txtSobrenome);
-        txtDtNasc = (EditText)findViewById(R.id.txtDtNasc);
-        txtEmail = (EditText)findViewById(R.id.txtEmail);
-        txtSenha = (EditText)findViewById(R.id.txtSenha);
+        this.txtNome = (EditText)findViewById(R.id.txtNome);
+        this.txtSobrenome = (EditText)findViewById(R.id.txtSobrenome);
+        this.txtDtNasc = (EditText)findViewById(R.id.txtDtNasc);
+        this.txtEmail = (EditText)findViewById(R.id.txtEmail);
+        this.txtSenha = (EditText)findViewById(R.id.txtSenha);
 
         //Mapeamento RadioButton
         rdgSexo = (RadioGroup)findViewById(R.id.rdgSexo);
@@ -66,29 +49,30 @@ public class ActCadastro extends AppCompatActivity {
         //Mapeamento Button
         btnCadastrar = (Button)findViewById(R.id.btnCadastrar);
 
-        btnCadastrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                if(txtNome.getText().toString().isEmpty() ||
-                   txtSobrenome.getText().toString().isEmpty() ||
-                   txtDtNasc.getText().toString().isEmpty() ||
-                   txtEmail.getText().toString().isEmpty() ||
-                   txtSenha.getText().toString().isEmpty())
-                   {
-                        AlertDialog.Builder dlg = new AlertDialog.Builder(ActCadastro.this);
-                        dlg.setMessage("Todos os campos são obrigatórios.");
-                        dlg.setNeutralButton("OK", null);
-                        dlg.show();
-
-                       
-                }
 
             }
-        });
 
 
+    public void onClickCadastrar(View view){
 
+        if(txtNome.getText().toString().isEmpty() ||
+                txtSobrenome.getText().toString().isEmpty() ||
+                txtDtNasc.getText().toString().isEmpty() ||
+                txtEmail.getText().toString().isEmpty() ||
+                txtSenha.getText().toString().isEmpty())
+        {
+            AlertDialog.Builder dlg = new AlertDialog.Builder(ActCadastro.this);
+            dlg.setMessage("Todos os campos são obrigatórios.");
+            dlg.setNeutralButton("OK", null);
+            dlg.show();
+
+
+        }else {
+            this.usuario.setNome(this.txtNome.getText().toString());
+            this.usuario.setSobrenome(this.txtSobrenome.getText().toString());
+            this.usuario.setDataNascimento(this.txtDtNasc.getText().toString());
+            this.usuario.setEmail(this.txtEmail.getText().toString());
+            this.usuario.setSenha(this.txtSenha.getText().toString());
+        }
     }
 }

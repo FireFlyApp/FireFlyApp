@@ -1,28 +1,22 @@
 package com.example.junior.fireflyapp;
 
-import java.util.Date;
-
 /**
  * Created by Junior on 03/11/2015.
  */
-public class Usuario {
+public class Usuario extends _Default {
 
     private int usuarioId;
     private String nome;
     private String sobrenome;
-    private char sexo;
-    private Date dataNascimento;
+    private String sexo;
+    private String dataNascimento;
     private String email;
     private String senha;
 
 
-    public int getUsuarioId() {
-        return usuarioId;
-    }
+    public int getUsuarioId() { return usuarioId; }
 
-    public void setUsuarioId(int usuarioId) {
-        this.usuarioId = usuarioId;
-    }
+    public void setUsuarioId(int usuarioId) { this.usuarioId = usuarioId; }
 
     public String getNome() {
         return nome;
@@ -40,19 +34,13 @@ public class Usuario {
         this.sobrenome = sobrenome;
     }
 
-    public char getSexo() {
-        return sexo;
-    }
+    public String getSexo() { return sexo;}
 
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
+    public void setSexo(String sexo) { this.sexo = sexo; }
 
-    public Date getDataNascimento() {
-        return dataNascimento;
-    }
+    public String getDataNascimento() { return dataNascimento; }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -68,7 +56,32 @@ public class Usuario {
         return senha;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setSenha(String senha) { this.senha = senha; }
+
+    public Usuario(){
+        super();
+        this.usuarioId = -1;
+        this.nome = "";
+        this.sobrenome = "";
+        this.sexo = "";
+        this.email = "";
+        this.senha = "";
+    }
+
+    public void cadastrar(){
+
+        String comando = "";
+        if(this.getUsuarioId() == -1){
+            comando = String.format("INSERT INTO Usuario (nome, sobrenome, sexo, dataNascimento, email, senha) VALUES ('%s', '%s', '%s', '%s', '%s', '%s');",
+                    this.getNome(), this.getSobrenome(), this.getSexo(), this.getDataNascimento(), this.getEmail(), this.getSenha());
+        }else{
+            comando = String.format("UPDATE Usuario SET nome = '%s', sobrenome = '%s', sexo = '%s', dataNascimento = '%s', email = '%s', senha = '%s' WHERE usuario_Id = %d);",
+                    this.getNome(), this.getSobrenome(), this.getSexo(), this.getDataNascimento(), this.getEmail(), this.getSenha(), getUsuarioId());
+        }
+
+        DB db = new DB();
+        db.executar(comando);
+        this._mensagem = db._mensagem;
+        this._status = db._status;
     }
 }
