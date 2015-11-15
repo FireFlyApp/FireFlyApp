@@ -17,4 +17,5 @@
     <string name="lblEmail">Email</string>
     <string name="lblSenha">Senha</string>
     <string name="btnCadastrar">Cadastrar</string>
+    <string name="title_activity_activ_cadastro">ActivCadastro</string>
 </resources>
