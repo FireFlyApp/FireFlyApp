@@ -67,7 +67,7 @@ public class ActCadastro extends AppCompatActivity {
            selectSexo = R.id.rbtMasculino == rdgSexo.getCheckedRadioButtonId();
            sexo = "M";
         }else {
-            selectSexo = R.id.rbtMasculino == rdgSexo.getCheckedRadioButtonId();
+            selectSexo = R.id.rbtFeminino == rdgSexo.getCheckedRadioButtonId();
             sexo = "F";
         }
 
