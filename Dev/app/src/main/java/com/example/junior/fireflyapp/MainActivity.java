@@ -1,13 +1,15 @@
 package com.example.junior.fireflyapp;
 
-import android.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.*;
 import android.view.View;
-import android.content.*;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,10 +36,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(txtEmail.getText().toString().isEmpty() || txtSenha.getText().toString().isEmpty()) {
-                    AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
-                    dlg.setMessage("Campo Email/Senha vazio");
-                    dlg.setNeutralButton("OK", null);
-                    dlg.show();
+
+                    Toast.makeText(getApplicationContext(),"Campo Email/Senha vazio", Toast.LENGTH_SHORT).show();
+
                 }else{
                     Intent it = new Intent(MainActivity.this, ActListarOpcoes.class);
                     startActivity(it);

@@ -72,8 +72,8 @@ public class Usuario extends _Default {
 
         String comando = "";
         if(this.getUsuarioId() == -1){
-            comando = String.format("INSERT INTO Usuario (nome, sobrenome, sexo, dataNascimento, email, senha) VALUES ('%s', '%s', '%s', '%s', '%s', '%s');",
-                    this.getNome(), this.getSobrenome(), this.getSexo(), this.getDataNascimento(), this.getEmail(), this.getSenha());
+            comando = String.format("INSERT INTO Usuario (nome, sobrenome, sexo, dataNascimento, email, senha, termouso, login) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%d', '%d');",
+                    this.getNome(), this.getSobrenome(), this.getSexo(), this.getDataNascimento(), this.getEmail(), this.getSenha(), 1, 0);
         }else{
             comando = String.format("UPDATE Usuario SET nome = '%s', sobrenome = '%s', sexo = '%s', dataNascimento = '%s', email = '%s', senha = '%s' WHERE usuario_Id = %d);",
                     this.getNome(), this.getSobrenome(), this.getSexo(), this.getDataNascimento(), this.getEmail(), this.getSenha(), getUsuarioId());

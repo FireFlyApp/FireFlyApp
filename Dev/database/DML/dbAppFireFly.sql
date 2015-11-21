@@ -13,6 +13,7 @@ CREATE  TABLE IF NOT EXISTS `dbAppFireFly`.`Usuario` (
   `login` INT NOT NULL,
   -- 15/11/2015 - INSERIDO - {{FIM}}
   PRIMARY KEY (`usuario_ID`) );
+
    
   CREATE  TABLE IF NOT EXISTS `dbAppFireFly`.`Promotor` (
   `promotor_ID` INT NOT NULL AUTO_INCREMENT ,

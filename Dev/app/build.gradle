@@ -23,8 +23,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: '*.jar', dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.1.0'
-    compile 'com.android.support:design:23.1.0'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
     compile 'mysql:mysql-connector-mxj:5.0.12'
+    compile 'com.wdullaer:materialdatetimepicker:1.4.1'
+    //compile 'mysql:mysql-connector-java:5.1.37'
 }

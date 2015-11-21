@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 public class DB extends _Default implements Runnable {
 
     private Connection conn;
-    private String host = "192.168.0.100";
+    private String host = "127.0.0.1";
     private String db = "dbAppFireFly";
     private int port = 3306;
     private String user = "root";
@@ -42,7 +42,7 @@ public class DB extends _Default implements Runnable {
         Thread tread = new Thread(this);
         tread.start();
         try{
-            tread.join();//Aplicação espera a conclusão do metódo run
+            tread.join();//Aplicação espera a conclusão do metodo run
 
         }catch (Exception e){
             this._mensagem = e.getMessage();
